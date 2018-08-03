@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <style>
+        form{
+            width: 400px;
+            max-width: 100%;
+            padding: 20px; 
+            margin: 20px auto;
+        }
+        input,  label{
+            display: block;
+            margin: 10px 0;
+            padding: 5px;
+            width: 100%;
+        }
+        input[type='submit']{width: auto;}
+    </style>
+</head>
+<body>
+    <% include partials/nav.ejs %>
+    <h1>Contact</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti illo enim temporibus illum harum officia, vel quod quos doloremque perferendis nobis, perspiciatis maiores ratione ipsa nisi sit distinctio porro iusto.</p>
+    <p><%= qs.person%></p>
+    <form id="contact-form" method="POST" action="/contact">
+        <label for="who">Who do you want to contact</label>
+        <input type="text" name="who" value="<%= qs.person %>">
+        <label for="departament">Which departament?</label>
+        <input type="text" name="departament" value="<%= qs.dept %>">
+        <label for="email">Your email</label>
+        <input type="email" name="email">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
